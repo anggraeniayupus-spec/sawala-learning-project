@@ -1,9 +1,9 @@
-import { produkList } from "./data";
+import { produkList } from "./data.js";
 
 const cariProduk = (kataKunci = "", kategori ="semua") => {
     return produkList.filter((item) => {
-        const cocokNama = oncontextmenu.nama.toLowerCase().includes(kataKunci.toLowerCase());
-        const cocokKategori = kategori === "semua" || iteem.kategori === kategori;
+        const cocokNama = item.nama.toLowerCase().includes(kataKunci.toLowerCase());
+        const cocokKategori = kategori === "semua" || item.kategori === kategori;
         return cocokNama && cocokKategori;
     });
 };
