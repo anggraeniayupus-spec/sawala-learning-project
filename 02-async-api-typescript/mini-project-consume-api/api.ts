@@ -1,13 +1,15 @@
 //Pertama kita bjuat cetakan/ template interface untuk data user yang mau kita ambil
-interface User {
+export interface User {
   id: number;
   name: string;
   email: string;
   website: string;
 }
 
-//Kemudian nuat fungsi khusus fetch API
+//Kemudian buat fungsi khusus fetch API
 export async function getUserData(userId: number): Promise<User> {
+
+  try {
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
     
     // Cek kalau HTTP response gagal (misal status 404)
@@ -17,5 +19,9 @@ export async function getUserData(userId: number): Promise<User> {
 
   const data: User = await response.json();
   return data;
-};
-
+  }
+ catch (error) {
+  console.error("Gagal mengambil data user:", error);
+  throw error;
+}
+}

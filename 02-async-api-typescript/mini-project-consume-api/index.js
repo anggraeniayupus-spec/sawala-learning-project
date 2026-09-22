@@ -1,54 +1,35 @@
-//import api.ts
-import {getUserData} from './api.ts';
+function buatDkriuk (paket, jumlah) {
+    return new Promise ((resolve, reject) => {
+        console.log(`Pesanan paket ${paket} dengan ${jumlah} sedang di siapkan`);
 
-//State awal
-let state = {
-    isLoading: false,
-    error: null,
-    data: null,
+        setTimeout(() => {
+            const stokPaket = {
+                'Dada Ayam': 0,
+                'Paha Ayah': 1,
+                'Dada Sapi': 2,
+                'Paha Sapi': 3,
+            }
+
+            if (stokPaket[paket]) {
+                resolve (`Pesanan ${paket} dengan ${jumlah} anda berhasil dibuat!!`);
+            }else {
+                reject (`Maaf ${paket} habis, silahkan pesan jenis  yang lain :>`);
+            }
+        },3000 );
+    });
 }
 
-//fungsi untuk nampilin kondisi state
-function render() {
-    if (state.isLoading) {
-        console.log("Status: SEDANG LOADING...");
-    } else if (state.error) {
-        console.log(`Status ERROR: ${state.error}`);
-    } else if (state.data) {
-        console.log("Status SUKSES!!! Data diterima:");
-        console.log(`Nama: ${state.data.name}`);
-        console.log(`Email: ${state.data.email}`);
+async function ambilPesanan() {
+    try{
+        const hasil = await buatDkriuk(" Dada Ayam", "2");
+        console.log(hasil)
     }
-}
-
-//fungsi utama
-async function jalankanApp(id) {
-    //pertama state LOADING aktif
-    state = { isLoading: true, error: null, data: null };
-    render();
-    
-    try {
-        //ambil data lewat fungsi yang dari api.ts
-        const user = await getUserData(id);
-        //lalu state data (SUKSES)
-        state = { isLoading: false, error: null, data: user };
-        }
-        catch (err) {
-        //selanjutnya state ERROR (gagal)
-        state = { isLoading: false, error: err.message, data: null };
-        } 
-        finally {
-        //lalu tampilkan hasil akhirnya
-        render();
+    catch (error) {
+        console.log(error)
+    } 
+    finally {
+        console.log("Terimakasih Telah Memesan D'kriuk")
     }
-}
+    }
 
-//--- Tes Jalankan ---
-console.log("--- TES 1: DATA BERHASIL ---");
-jalankanApp(1); // Ambil ID 1 (Sukses)
-
-// Tes Jalur Error
-setTimeout(() => {
-  console.log("--- TES 2: DATA ERROR ---");
-  jalankanApp(9999); //Ambil dari ID 9999 (pasti Error)
-}, 2000);  // Dikasih jeda 2 detik 
+    ambilPesanan()
