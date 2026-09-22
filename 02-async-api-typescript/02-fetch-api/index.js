@@ -11,7 +11,7 @@ async function ambilUser() {
     const data = await respons.json();
 
     console.log("Nama User:", data.name);
-    console.log("Email:", data.email);
+    console.log("Email:", dataEmail);
 }
 
 ambilUser()

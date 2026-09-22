@@ -1,19 +1,19 @@
 // contoh promise pemesanan kopi
-const buatKopi = () =>{
+const buatTehtarik = () =>{
 return new Promise((resolve) => {
   setTimeout(() => {
-    resolve("Kopi kamu sudah jadi");
+    resolve("Teh tarik kamu sudah jadi");
   }, 2000);// nunggu 2 detik
 });
 };
 
 // penggunaan async
-const pesenKopi = async() =>{
-  console.log("pesan kopi dulu...");
+const pesenTehtarik = async() =>{
+  console.log("pesan Teh tarik dulu...");
 
 // await bertugas untuk nungguin proses janji (promise) selesai
-const hasil = await buatKopi();
+const hasil = await buatTehtarik();
 console.log(hasil);
-};
+}
 
-pesenKopi()
+pesenTehtarik()
