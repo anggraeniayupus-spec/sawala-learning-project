@@ -8,7 +8,7 @@ return new Promise((resolve) => {
 };
 
 // penggunaan async
-const pesenTehtarik = async() =>{
+async function pesenTehtarik () {
   console.log("pesan Teh tarik dulu...");
 
 // await bertugas untuk nungguin proses janji (promise) selesai

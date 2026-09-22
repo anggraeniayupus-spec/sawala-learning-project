@@ -12,6 +12,6 @@ async function ambilUser() {
 
     console.log("Nama User:", data.name);
     console.log("Email:", dataEmail);
-}
+};
 
 ambilUser()
