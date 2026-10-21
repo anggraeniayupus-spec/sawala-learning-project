@@ -1,35 +1,21 @@
-function buatDkriuk (paket, jumlah) {
-    return new Promise ((resolve, reject) => {
-        console.log(`Pesanan paket ${paket} dengan ${jumlah} sedang di siapkan`);
+// File utama untuk menjalankan mini project consume API
 
-        setTimeout(() => {
-            const stokPaket = {
-                'Dada Ayam': 0,
-                'Paha Ayah': 1,
-                'Dada Sapi': 2,
-                'Paha Sapi': 3,
-            }
+import { getPosts } from './api.js';
 
-            if (stokPaket[paket]) {
-                resolve (`Pesanan ${paket} dengan ${jumlah} anda berhasil dibuat!!`);
-            }else {
-                reject (`Maaf ${paket} habis, silahkan pesan jenis  yang lain :>`);
-            }
-        },3000 );
+// Fungsi async untuk menjalankan mini project
+async function jalankanMiniProject() {
+  console.log("Sedang mengambil data dari API...");
+  try {
+    const posts = await getPosts();
+    posts.forEach((post, index) => {
+      console.log(`\n--- Post ke-${index + 1} ---`);
+      console.log(`Judul: ${post.title}`);
+      console.log(`Isi: ${post.body}`);
     });
+  } catch (err) {
+    console.error("Gagal menjalankan mini project:", err);
+  }
 }
 
-async function ambilPesanan() {
-    try{
-        const hasil = await buatDkriuk(" Dada Ayam", "2");
-        console.log(hasil)
-    }
-    catch (error) {
-        console.log(error)
-    } 
-    finally {
-        console.log("Terimakasih Telah Memesan D'kriuk")
-    }
-    }
-
-    ambilPesanan()
+// Jalankan fungsinya
+jalankanMiniProject();

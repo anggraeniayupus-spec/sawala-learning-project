@@ -1,27 +1,15 @@
-//Pertama kita bjuat cetakan/ template interface untuk data user yang mau kita ambil
-export interface User {
+// Interface untuk struktur data Post dari API
+
+export interface Post {
+  userId: number;
   id: number;
-  name: string;
-  email: string;
-  website: string;
+  title: string;
+  body: string;
 }
 
-//Kemudian buat fungsi khusus fetch API
-export async function getUserData(userId: number): Promise<User> {
-
-  try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    
-    // Cek kalau HTTP response gagal (misal status 404)
-  if (!response.ok) {
-    throw new Error(`Data tidak ditemukan (Status: ${response.status})`);
-  }
-
-  const data: User = await response.json();
+// Fungsi async untuk mengambil daftar post dari JSONPlaceholder
+export async function getPosts(): Promise<Post[]> {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=3");
+  const data: Post[] = await response.json();
   return data;
-  }
- catch (error) {
-  console.error("Gagal mengambil data user:", error);
-  throw error;
-}
 }

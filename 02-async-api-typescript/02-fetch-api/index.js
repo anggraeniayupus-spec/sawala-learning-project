@@ -1,17 +1,18 @@
-//contohnya gini
-const API_URL="https://jsonplaceholder.typicode.com/users/1"
+// Contoh mengambil data dari API publik gratis dengan fetch
 
-async function ambilUser() {
-    console.log("lagi ngambil data user dari internet...");
+// Fungsi async untuk mengambil data user dari JSONPlaceholder
+async function ambilDataUser() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    const data = await response.json();
+    
+    console.log("Data User Berhasil Didapat:");
+    console.log(`Nama: ${data.name}`);
+    console.log(`Email: ${data.email}`);
+  } catch (error) {
+    console.error("Gagal mengambil data:", error);
+  }
+}
 
-    //ambil data mentah dari API
-    const respons = await fetch(API_URL);
-
-    //Lalu ubah formatnya ke JSON biar bisa dibaca sama js
-    const data = await respons.json();
-
-    console.log("Nama User:", data.name);
-    console.log("Email:", dataEmail);
-};
-
-ambilUser()
+// Jalankan fungsinya
+ambilDataUser();

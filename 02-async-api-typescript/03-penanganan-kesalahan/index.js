@@ -1,25 +1,24 @@
-async function ambilDataAman() {
-    try{
-        //URL nya sengaja disalahan untuk ngetes error
-        const response = await fetch("https://jsonplaceholder.typicode.com/salah-url");
+// Contoh penanganan kesalahan (error handling) saat memanggil API
 
-        //Fetc tidak otomatis melempar error untuk status 400-500,
-        //jadi kita lempar (throw)akan selalu error sendiri kalau responnya gagal (!response.ok)
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+async function cekErrorAPI() {
+  try {
+    // Sengaja pakai URL salah biar error-nya bisa ditangkap
+    const response = await fetch("https://api.salah-nih.com/data");
+    
+    // Kalau response tidak OK (bukan 2xx), lempar error
+    if (!response.ok) {
+      throw new Error(`Server bermasalah! Status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log(data);
+    
+  } catch (error) {
+    // Tangkap error yang terjadi dan tampilkan pesannya
+    console.log("⚠️ Ups, terjadi kesalahan:");
+    console.log(error.message);
+  }
+}
 
-        const data = await response.json();
-        console.log("Data berhasil diambil:", data);
-    }
-    catch (error) {
-        //semua error (entah si jaringannya putus atau karena throw error di atas) masuk ke sini
-        console.log("terjadi kesalahan saat mengambil data",error.message);
-    }
-    finally {
-        //kode dibawah sini bakalan selalu jalan, entah berhasil atau gagal.
-        console.log("Proses request selesai.");
-    }
-};
-
-ambilDataAman()
+// Jalankan fungsinya
+cekErrorAPI();
