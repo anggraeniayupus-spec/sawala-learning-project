@@ -1,4 +1,4 @@
-//contoh fungsi matematika
+// contoh fungsi matematika
 function tambah(a, b) {
     return a + b;
 }
@@ -6,8 +6,8 @@ function tambah(a, b) {
 function kurang(a, b) {
     return a - b;
 }
-//cara ekspornya di masukin ke dalam objek
-module.exports = {   //module.exports itu untuk membagikkan fungsinya
+// cara ekspornya di masukkan ke dalam objek
+module.exports = {   // module.exports itu untuk membagikan fungsinya
     tambah: tambah,
     kurang: kurang
 };

@@ -1,5 +1,5 @@
   // Panggil fungsinya dari file math.js
-const math = require('./math'); //cirikhas commonJS
+const math = require('./math'); // ciri khas CommonJS
 
 console.log("=== Latihan Sistem Modul (Function Biasa) ===");
 
