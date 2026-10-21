@@ -1,0 +1,15 @@
+{
+  // Konfigurasi TypeScript khusus untuk kode aplikasi (src/main.tsx dan turunannya).
+  "compilerOptions": {
+    // File tsbuildinfo digunakan untuk incremental build
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // Mode JSX react-jsx (transformasi otomatis, tidak perlu impor React)
+    "jsx": "react-jsx",
+    // Sertakan tipe klien Vite (misal import.meta.env)
+    "types": ["vite/client"]
+  },
+  // Titik masuk aplikasi
+  "files": ["src/main.tsx"],
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,43 @@
+# File ini menentukan file dan folder yang diabaikan oleh Git (tidak di-upload ke repositori).
+# Digunakan agar repositori tetap kecil dan hanya berisi kode sumber, bukan file hasil build atau dependensi.
+
+# --- Logs ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Di outputan (hasil build) ---
+dist
+dist-ssr
+*.local
+
+# --- Dependensi dan modul Node ---
+node_modules/
+jspm_packages/
+
+# --- TypeScript / Vite cache ---
+*.tsbuildinfo
+.vite/
+
+# --- Environment / variabel rahasia ---
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- IDE / editor ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- OS ---
+.DS_Store
+Thumbs.db

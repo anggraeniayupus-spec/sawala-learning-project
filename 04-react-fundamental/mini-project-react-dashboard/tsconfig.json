@@ -1,0 +1,39 @@
+{
+  // Konfigurasi dasar TypeScript untuk seluruh proyek.
+  "compilerOptions": {
+    // Target versi JavaScript yang dihasilkan
+    "target": "ES2022",
+    // Gunakan class fields modern sesuai spesifikasi
+    "useDefineForClassFields": true,
+    // Library yang tersedia: ES2022, DOM (browser), dan DOM.Iterable
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // Sistem modul ESNext
+    "module": "ESNext",
+    // Lewati pengecekan tipe pada file deklarasi (.d.ts) untuk mempercepat build
+    "skipLibCheck": true,
+    // Resolusi modul sesuai dengan bundler (Vite)
+    "moduleResolution": "bundler",
+    // Izinkan impor ekstensi .ts/.tsx secara langsung
+    "allowImportingTsExtensions": true,
+    // Izinkan impor file JSON
+    "resolveJsonModule": true,
+    // Setiap file diisolasi saat di-compile (cocok dengan Vite)
+    "isolatedModules": true,
+    // Jangan menghasilkan file output (.js), biarkan Vite yang menangani
+    "noEmit": true,
+    // Aktifkan JSX dalam mode transformasi otomatis React
+    "jsx": "react-jsx",
+    // Aktifkan pemeriksaan tipe ketat (strict mode)
+    "strict": true,
+    // Hapus peringatan variabel lokal yang tidak digunakan
+    "noUnusedLocals": true,
+    // Hapus peringatan parameter yang tidak digunakan
+    "noUnusedParameters": true,
+    // Jangan biarkan case switch terlewatkan tanpa break/return
+    "noFallthroughCasesInSwitch": true
+  },
+  // Hanya sertakan folder src dalam kompilasi
+  "include": ["src"],
+  // Referensi ke konfigurasi Node.js untuk alat bantu pengembangan
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

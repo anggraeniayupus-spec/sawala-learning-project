@@ -1,0 +1,170 @@
+/* Gaya khusus untuk komponen App (tata letak dashboard utama). */
+/* Aturan di bawah hanya berlaku pada elemen yang memiliki class yang cocok di App.tsx. */
+
+.dashboard {
+  /* Tata letak flex untuk menempatkan sidebar dan konten bersebelahan */
+  display: flex;
+  /* Tinggi minimal layar penuh */
+  min-height: 100vh;
+}
+
+/* --- Sidebar Navigasi --- */
+.sidebar {
+  /* Lebar sidebar tetap */
+  width: 240px;
+  /* Latar belakang putih */
+  background-color: #ffffff;
+  /* Garis pemisah kanan sidebar */
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  /* Susunan elemen secara vertikal */
+  flex-direction: column;
+  padding: 24px;
+  /* Sidebar selalu terlihat saat digulir */
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: 700;
+  /* Teks judul hitam tua */
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  /* Jarak antar tautan navigasi */
+  gap: 8px;
+}
+
+.nav a {
+  padding: 10px 14px;
+  /* Sudut membulat pada tautan */
+  border-radius: 8px;
+  /* Warna teks abu-abu */
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+  /* Animasi halus saat hover */
+  transition: all 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  /* Latar belakang biru muda saat hover/aktif */
+  background-color: #eff6ff;
+  /* Teks biru tua saat hover/aktif */
+  color: #2563eb;
+}
+
+/* --- Konten Utama --- */
+.main-content {
+  /* Beri ruang agar tidak tertutup sidebar (fixed) */
+  margin-left: 240px;
+  /* Konten mengambil sisa ruang lebar */
+  flex: 1;
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  /* Judul di kiri, tombol di kanan */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.welcome {
+  /* Teks sambutan abu-abu */
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* --- Grid Kartu Statistik --- */
+.stats-grid {
+  display: grid;
+  /* Buat kolom otomatis, minimal 200px, merespon layar */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Jarak antar kartu */
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* --- Section Aktivitas Terbaru --- */
+.activity-section {
+  /* Latar belakang putih untuk kartu aktivitas */
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  /* Sudut membulat */
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.activity-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.activity-table {
+  /* Tabel lebar penuh */
+  width: 100%;
+  /* Hilangkan jarak antar sel border */
+  border-collapse: collapse;
+}
+
+.activity-table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  /* Judul kolom abu-abu */
+  color: #6b7280;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.activity-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  color: #374151;
+}
+
+.activity-table tr:last-child td {
+  /* Hilangkan garis bawah pada baris terakhir */
+  border-bottom: none;
+}
+
+/* Badge status (label kecil untuk published / draft) */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  /* Bentuk pil / kapsul */
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-published {
+  /* Hijau muda untuk publikasi */
+  background-color: #dcfce7;
+  /* Teks hijau tua */
+  color: #166534;
+}
+
+.status-draft {
+  /* Kuning muda untuk draft */
+  background-color: #fef3c7;
+  /* Teks coklat tua */
+  color: #92400e;
+}

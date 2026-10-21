@@ -1,0 +1,15 @@
+{
+  // Konfigurasi TypeScript khusus untuk lingkungan Node.js (konfigurasi build seperti vite.config.ts).
+  "compilerOptions": {
+    // Sistem modul ESNext
+    "module": "ESNext",
+    // Resolusi modul sesuai bundler
+    "moduleResolution": "bundler",
+    // Sertakan tipe bawaan Node.js
+    "types": ["node"],
+    // Aktifkan composite agar dapat direferensi oleh proyek lain
+    "composite": true
+  },
+  // Hanya sertakan file konfigurasi Vite
+  "include": ["vite.config.ts"]
+}

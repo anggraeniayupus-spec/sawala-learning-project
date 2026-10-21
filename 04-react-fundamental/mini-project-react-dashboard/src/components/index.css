@@ -1,0 +1,40 @@
+/* Gaya global (global styles) yang diterapkan ke seluruh aplikasi dashboard. */
+/* File ini diimpor di main.tsx sehingga aturan di bawah berlaku di semua komponen. */
+
+* {
+  /* Pastikan padding dan border tidak menambah ukuran elemen */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Font utama antarmuka */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Latar belakang abu-abu muda untuk seluruh halaman */
+  background-color: #f3f4f6;
+  /* Teks warna abu-abu gelap */
+  color: #1f2937;
+  line-height: 1.5;
+  /* Haluskan tepi font di macOS */
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  /* Pastikan akar aplikasi setidaknya tinggi layar penuh */
+  min-height: 100vh;
+}
+
+button {
+  /* Tombol menggunakan font yang sama dengan body */
+  font-family: inherit;
+  /* Kursor jari tangan saat diarahkan ke tombol */
+  cursor: pointer;
+}
+
+a {
+  /* Hilangkan garis bawah bawaan tautan */
+  text-decoration: none;
+  /* Warna tautan mengikuti induknya */
+  color: inherit;
+}
