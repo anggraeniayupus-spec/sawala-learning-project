@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1"
+  },
+  "name": "sawala-learning-project",
+  "version": "1.0.0",
+  "description": "Repositori ini berisi dokumentasi, modul latihan, dan *mini project* dari program pembelajaran **Full-Stack JavaScript & TypeScript** selama 10 minggu.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anggraeniayupus-spec/sawala-learning-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anggraeniayupus-spec/sawala-learning-project/issues"
+  },
+  "homepage": "https://github.com/anggraeniayupus-spec/sawala-learning-project#readme"
+}
