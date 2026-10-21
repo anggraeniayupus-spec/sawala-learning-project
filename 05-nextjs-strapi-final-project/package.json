@@ -1,0 +1,26 @@
+{
+  "name": "05-nextjs-strapi-final-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Final project Next.js + Strapi",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend-strapi\" \"npm run dev --workspace=frontend-nextjs\"",
+    "dev:backend": "npm run dev --workspace=backend-strapi",
+    "dev:frontend": "npm run dev --workspace=frontend-nextjs",
+    "build": "npm run build --workspace=backend-strapi && npm run build --workspace=frontend-nextjs",
+    "start": "npm run start --workspace=backend-strapi",
+    "setup": "npm install && npm install --workspace=backend-strapi && npm install --workspace=frontend-nextjs"
+  },
+  "workspaces": [
+    "backend-strapi",
+    "frontend-nextjs"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/05-nextjs-strapi-final-project.git"
+  },
+  "license": "MIT"
+}
