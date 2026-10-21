@@ -4,19 +4,20 @@ Repositori ini berisi dokumentasi, modul latihan, dan *mini project* dari progra
 
 ---
 
-## 📑 Kurikulum & Struktur Folder
+## 📑 Struktur Folder
 
-### 01. JavaScript Fundamentals (Minggu 1–2)
+### 01. JavaScript Fundamentals/ (Minggu 1–2)
 Fokus pada pemahaman dasar sintaksis JavaScript modern (ES6+).
-* **01-variabel-tipe-data:** Deklarasi (`const`, `let`) dan jenis tipe data dasar.
-* **02-kondisi-fungsi:** Percabangan logika (`if/else`) dan penulisan fungsi (`arrow function`).
-* **03-object-array:** Pengelolaan tipe data kompleks dan struktur data terorganisir.
-* **04-metode-array-perulangan:** Manipulasi array menggunakan `.map()`, `.filter()`, `.reduce()`, dan perulangan.
-* **05-destructuring-spread:** Fitur destructuring dan spread operator (`...`).
+* **01-variabel-tipe-data/:** Deklarasi (`const`, `let`) dan jenis tipe data dasar.
+* **02-kondisi-fungsi/:** Percabangan logika (`if/else`) dan penulisan fungsi (`arrow function`).
+* **03-object-array/:** Pengelolaan tipe data kompleks dan struktur data terorganisir.
+* **04-metode-array-perulangan/:** Manipulasi array menggunakan `.map()`, `.filter()`, `.reduce()`, dan perulangan.
+* **05-destructuring-spread/:** Fitur destructuring dan spread operator (`...`).
 * **06-es-modules:** Pemisahan file kode menggunakan `import` dan `export`.
-* **daftar-produk-proyek-mini:** Latihan memproses data produk menggunakan *array of objects*.
-
----
+* **daftar-produk-proyek-mini/:** Berisi folder latihan
+     * **data-siswa/:** Folder ini berisi latihan tentang data siswa
+     * **kalkulator-sederhana/:** Folder ini berisi latihan tentang kalkulator sederhana
+     * **pencarian-produk/:** Folder ini berisi latihan tentang pencarian produk
 
 
 ---
