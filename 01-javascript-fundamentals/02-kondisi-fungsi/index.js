@@ -1,4 +1,6 @@
-// fungsi cek stok
+// Contoh percabangan (if/else) dan fungsi arrow
+
+// Fungsi untuk mengecek apakah barang masih ada stoknya atau tidak
 const cekKetersediaan = (namaBarang, stok) => {
   if (stok > 0) {
     return `Barang ${namaBarang} masih ada, sisa ${stok} pcs.`;
@@ -7,6 +9,6 @@ const cekKetersediaan = (namaBarang, stok) => {
   }
 };
 
-// Panggil fungsinya
+// Panggil fungsinya untuk mencetak ke console
 console.log(cekKetersediaan("Sepatu", 5));
 console.log(cekKetersediaan("Kaos", 0));
